@@ -8,3 +8,13 @@ C:\Users\Youssef El Gharib\source\repos\Exercice3-TP2\Exercice3-TP2\obj\Debug\Ex
 C:\Users\Youssef El Gharib\source\repos\Exercice3-TP2\Exercice3-TP2\obj\Debug\Exercice3-TP2.csproj.CoreCompileInputs.cache
 C:\Users\Youssef El Gharib\source\repos\Exercice3-TP2\Exercice3-TP2\obj\Debug\Exercice3-TP2.exe
 C:\Users\Youssef El Gharib\source\repos\Exercice3-TP2\Exercice3-TP2\obj\Debug\Exercice3-TP2.pdb
+C:\Users\ista\source\repos\TP2-Exercice3\Exercice3-TP2\bin\Debug\Exercice3-TP2.exe.config
+C:\Users\ista\source\repos\TP2-Exercice3\Exercice3-TP2\bin\Debug\Exercice3-TP2.exe
+C:\Users\ista\source\repos\TP2-Exercice3\Exercice3-TP2\bin\Debug\Exercice3-TP2.pdb
+C:\Users\ista\source\repos\TP2-Exercice3\Exercice3-TP2\obj\Debug\Exercice3-TP2.csprojAssemblyReference.cache
+C:\Users\ista\source\repos\TP2-Exercice3\Exercice3-TP2\obj\Debug\Exercice3_TP2.Form1.resources
+C:\Users\ista\source\repos\TP2-Exercice3\Exercice3-TP2\obj\Debug\Exercice3_TP2.Properties.Resources.resources
+C:\Users\ista\source\repos\TP2-Exercice3\Exercice3-TP2\obj\Debug\Exercice3-TP2.csproj.GenerateResource.cache
+C:\Users\ista\source\repos\TP2-Exercice3\Exercice3-TP2\obj\Debug\Exercice3-TP2.csproj.CoreCompileInputs.cache
+C:\Users\ista\source\repos\TP2-Exercice3\Exercice3-TP2\obj\Debug\Exercice3-TP2.exe
+C:\Users\ista\source\repos\TP2-Exercice3\Exercice3-TP2\obj\Debug\Exercice3-TP2.pdb

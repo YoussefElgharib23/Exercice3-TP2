@@ -13,7 +13,7 @@ namespace Exercice3_TP2
 {
     public partial class Form1 : Form
     {
-        static string connectionString = @"Data Source=localhost;Initial Catalog=Stagiaires;Integrated Security=True;User Id=Youssef;Password=Youssef@2310";
+        static string connectionString = @"Data Source=DESKTOP-8KDCUOK\SQLEXPRESS;Initial Catalog=DbStagiaire;User ID=tdi-sg1;Password=2021;";
         SqlConnection connection = new SqlConnection(connectionString);
         public Form1()
         {
@@ -24,18 +24,18 @@ namespace Exercice3_TP2
         {
             connection.Open();
             SqlCommand command = connection.CreateCommand();
-            command.CommandText = "SELECT Stagiaire, Examen FROM Notes";
+            command.CommandText = "SELECT * FROM Stagiaires";
             SqlDataReader reader = command.ExecuteReader();
-
-            if ( reader.HasRows )
+            if (reader.HasRows)
             {
                 while (reader.Read())
                 {
                     comboBoxStagiaire.Items.Add(reader[0]);
-                    comboBoxStagiaire.Items.Add(reader[1]);
                 }
+                reader.Close();
             }
-            reader.Close();
+            comboBoxStagiaire.SelectedItem = comboBoxStagiaire.Items[0];
+            selectionnerExamen(comboBoxStagiaire.SelectedItem.ToString());
         }
 
         private void btnModifierClickEvent(object sender, EventArgs e)
@@ -59,12 +59,44 @@ namespace Exercice3_TP2
 
                 SqlCommand command = connection.CreateCommand();
                 command.CommandText = string.Format("UPDATE Notes SET note = {0} WHERE Stagiaire = {1} AND Examen = {2}", note, StagiaireNum, ExamenNum);
-                command.ExecuteNonQuery();
+                if (command.ExecuteNonQuery() > 0)
+                {
+                    MessageBox.Show("La note de l\'examen est bien modifieé !");
+                }
             }
             catch ( FormatException)
             {
                 MessageBox.Show("La note est invalid !");
             }
+        }
+
+        private void selectionnerExamen(string numero)
+        {
+            SqlCommand command = connection.CreateCommand();
+            int numeroStagiaire = int.Parse(numero);
+            command.CommandText = string.Format("SELECT Examen FROM Notes WHERE Stagiaire = {0}", numeroStagiaire);
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    comboBoxExamen.Items.Add(reader[0]);
+                }
+                textBoxNote.Enabled = true;
+                btnModifierNote.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Nothing !");
+                textBoxNote.Enabled = false;
+                btnModifierNote.Enabled = false;
+            }
+            reader.Close();
+        }
+
+        private void dropDownClosedEvent(object sender, EventArgs e)
+        {
+            selectionnerExamen(comboBoxStagiaire.SelectedItem.ToString());
         }
     }
 }
